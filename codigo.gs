@@ -204,7 +204,8 @@ function getInfoFromAlumn(rawAlumno, encabezados) {
             //Buscamos un la cadena "Ausente: X" (siendo X cualquier digito) y obtenemos el valor
             asignatura.faltas = ausencia.getValue().match(/Ausente: \d+/)[0].split(":")[1].trim()
             //Calculamos el pordentaje
-            asignatura.porcentaje = Math.round(asignatura.faltas / (Number(asignatura.asistencias) + Number(asignatura.faltas)) * 100);
+            asignatura.porcentaje = Math.round(asignatura.faltas / (Number(asignatura.asistencias) +
+                                    Number(asignatura.faltas)) * 100);
         }
         alumno.asignaturas.push(asignatura)
     }
